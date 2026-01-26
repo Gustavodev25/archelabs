@@ -12,7 +12,7 @@ export const TextScramble: React.FC<TextScrambleProps> = ({
     duration = 2000
 }) => {
     const [text, setText] = useState(words[0]);
-    const [index, setIndex] = useState(0);
+    const [, setIndex] = useState(0);
 
     // Caracteres para o efeito de "embaralhar"
     const chars = "!<>-_\\/[]{}—=+*^?#________";
@@ -20,23 +20,23 @@ export const TextScramble: React.FC<TextScrambleProps> = ({
     const intervalRef = useRef<any>(null);
 
     useEffect(() => {
-        let counter = 0;
+
 
         const nextWord = () => {
             setIndex((prev) => {
                 const nextIdx = (prev + 1) % words.length;
                 const newWord = words[nextIdx];
-                const oldWord = words[prev];
+
 
                 let iteration = 0;
 
                 clearInterval(intervalRef.current);
 
                 intervalRef.current = setInterval(() => {
-                    setText((prevText) => {
+                    setText(() => {
                         return newWord
                             .split("")
-                            .map((letter, i) => {
+                            .map((_, i) => {
                                 if (i < iteration) {
                                     return newWord[i];
                                 }
