@@ -1,0 +1,133 @@
+.cta-section {
+    padding: 8rem 1.5rem;
+    /* Maintain spacing */
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    /* Or white, doesn't matter much as parent is likely white */
+}
+
+/* Match 'Features' card style */
+.cta-container {
+    width: min(90%, 1200px);
+
+    /* The requested background style */
+    background: linear-gradient(180deg, #fff 0%, #fafafa 100%);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 15px 30px -8px rgba(0, 0, 0, 0.08);
+    /* Matches Features hover shadow for a 'lifted' look or standard shadow */
+
+    border-radius: 32px;
+    /* Keeping the large radius for a main section feel, even if features are 20px */
+    padding: 5rem 3rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Removed cta-background-glow as Features doesn't have it */
+
+.cta-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+}
+
+.cta-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+
+    /* Dark text for light background */
+    color: #1a1a1a;
+
+    /* Optional: Add the same gradient text as headlines if desired, but User said 'card background'. 
+       Let's keep it solid dark or use the gradient title style from other headers? 
+       Features title is #111. Let's stick to simple dark for maximum readability or the gradient used in titles.
+       Let's use the gradient used in Testimonials/Services titles for consistency on this big header. */
+    background: linear-gradient(135deg, #2d3436 0%, #000000 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cta-subtitle {
+    font-size: 1.25rem;
+    /* Darker grey for light background */
+    color: #636e72;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+.cta-button-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+/* Button needs to invert: Dark Button on Light Card */
+.cta-button {
+    background: #111111;
+    color: #ffffff;
+    padding: 0.875rem 2rem;
+    /* Reduced from 1.25rem 3rem */
+    border-radius: 100px;
+    font-size: 1rem;
+    /* Reduced from 1.125rem */
+    font-weight: 500;
+    /* Slightly lighter weight */
+    text-decoration: none;
+    transition: all 0.2s ease;
+    /* Faster, simpler transition */
+    border: 1px solid transparent;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    /* Reduced gap */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+    background: #000000;
+    transform: translateY(-2px);
+    /* Subtle lift only, no scale */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cta-button svg {
+    width: 20px;
+    /* Smaller icon */
+    height: 20px;
+    transition: transform 0.2s ease;
+}
+
+.cta-button:hover svg {
+    transform: translateX(2px);
+    /* Subtle shift */
+}
+
+@media (max-width: 768px) {
+    .cta-container {
+        padding: 3rem 1.5rem;
+        border-radius: 24px;
+    }
+
+    .cta-title {
+        font-size: 2.5rem;
+    }
+
+    .cta-subtitle {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        width: 100%;
+        justify-content: center;
+    }
+}

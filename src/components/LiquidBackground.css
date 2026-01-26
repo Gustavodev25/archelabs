@@ -1,0 +1,19 @@
+.liquid-gradient-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+/* Removido completamente o overlay de grão/ruído */
+
+.liquid-gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    /* Blur alto para suavidade máxima */
+    opacity: 0.9;
+    will-change: transform;
+    mix-blend-mode: normal;
+}

@@ -1,0 +1,103 @@
+.footer-section {
+    padding: 2rem 1.5rem;
+    background-color: #ffffff;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    color: #2d3436;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Left: Logo */
+.footer-left {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    /* Takes 1 part */
+    justify-content: flex-start;
+}
+
+.footer-logo {
+    height: 24px;
+    /* Slightly smaller for single line */
+    width: auto;
+    object-fit: contain;
+}
+
+/* Center: Copyright */
+.footer-center {
+    flex: 2;
+    /* Takes more space to ensure centering if needed, or stick to auto */
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.825rem;
+    color: #636e72;
+    white-space: nowrap;
+    /* Prevent breaking if possible */
+}
+
+/* Right: Created with */
+.footer-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.footer-origin {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.825rem;
+    color: #a4b0be;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.footer-heart {
+    color: #ff7675;
+    display: inline-flex;
+    animation: heartbeat 2s infinite ease-in-out;
+}
+
+.footer-flag {
+    filter: grayscale(0.2);
+    transition: filter 0.3s ease;
+}
+
+.footer-origin:hover .footer-flag {
+    filter: grayscale(0);
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        justify-content: center;
+        flex: auto;
+    }
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}

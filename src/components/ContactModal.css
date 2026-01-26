@@ -1,0 +1,230 @@
+.contact-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.contact-modal-content {
+    background: #ffffff;
+    width: min(90%, 500px);
+    max-height: 85vh;
+    border-radius: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding: 0;
+    -ms-overflow-style: none;
+    /* Hide scrollbar IE/Edge */
+    scrollbar-width: none;
+    /* Hide scrollbar Firefox */
+}
+
+/* Hide scrollbar Webkit for main modal */
+.contact-modal-content::-webkit-scrollbar {
+    display: none;
+}
+
+/* Top Row: Title and Close Button inline */
+.contact-modal-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 2rem 1rem 2rem;
+    /* Matches body padding side */
+    width: 100%;
+}
+
+.contact-modal-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111;
+    letter-spacing: -0.02em;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.contact-modal-close-inline {
+    background: transparent;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #9ca3af;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    margin-left: 1rem;
+}
+
+.contact-modal-close-inline:hover {
+    background: #f3f4f6;
+    color: #111;
+}
+
+.contact-modal-body-wrapper {
+    padding: 0 2rem 2rem 2rem;
+    /* Removed top padding as header handles it */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    background: #ffffff;
+    flex-grow: 1;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.contact-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.contact-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+}
+
+.contact-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+}
+
+.contact-input,
+.contact-custom-select-trigger {
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    background: #f9fafb;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: #111827;
+    transition: all 0.2s ease;
+    outline: none;
+    width: 100%;
+}
+
+/* Custom Select Styles */
+.contact-custom-select-trigger {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+}
+
+.contact-custom-select-trigger:hover {
+    background: #f3f4f6;
+}
+
+.contact-custom-select-trigger.active {
+    border-color: #000;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
+}
+
+.contact-custom-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    margin-top: 0.5rem;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.15), 0 4px 10px -2px rgba(0, 0, 0, 0.05);
+    z-index: 999;
+    max-height: 250px;
+    overflow-y: auto;
+    padding: 0.5rem;
+    transform-origin: top center;
+    -ms-overflow-style: none;
+    /* Hide scrollbar IE/Edge */
+    scrollbar-width: none;
+    /* Hide scrollbar Firefox */
+}
+
+/* Hide scrollbar Webkit for dropdown */
+.contact-custom-dropdown::-webkit-scrollbar {
+    display: none;
+}
+
+.contact-custom-option {
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    font-size: 0.95rem;
+    color: #374151;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2px;
+}
+
+.contact-custom-option:hover {
+    background: #f3f4f6;
+    color: #111;
+}
+
+.contact-custom-option.selected {
+    background: #f3f4f6;
+    color: #000;
+    font-weight: 500;
+}
+
+.contact-input:focus {
+    border-color: #000;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
+}
+
+.contact-textarea {
+    resize: none;
+    min-height: 120px;
+}
+
+.contact-submit-btn {
+    margin-top: 0.5rem;
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 0.875rem;
+    border-radius: 12px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.contact-submit-btn:hover {
+    background: #222;
+    transform: translateY(-1px);
+}
+
+.contact-submit-btn:active {
+    transform: translateY(0);
+}
